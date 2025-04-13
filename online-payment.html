@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2c3e50">
+    <title>D V Convent School - Secure UPI Payment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <section class="main-section">
+        <header>
+            <div class="header-content">
+                <h1>D V Convent School</h1>
+                <p>Secure UPI Payments</p>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="mainNav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="online-payment.html">Online Payment</a></li>
+                    <li><a href="important-updates.html" class="active">Important Updates</a></li>
+                    <li><a href="registration-admission.html">Registration & Admission</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <div class="payment-container">
+                <div class="payment-header">
+                    <h2><i class="fas fa-rupee-sign"></i> UPI Payment Portal</h2>
+                    <p>Quick and secure fee payments via UPI</p>
+                </div>
+                
+                <div class="upi-payment-section">
+                    <div class="payment-step">
+                        <div class="step-number">1</div>
+                        <h3>Enter Payment Details</h3>
+                    </div>
+                    
+                    <form id="paymentDetailsForm">
+                        <div class="form-group">
+                            <label for="studentName">Student Name*</label>
+                            <input type="text" id="studentName" required placeholder="Enter full name">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="studentId">Student ID*</label>
+                                <input type="text" id="studentId" required placeholder="School ID number">
+                            </div>
+                            <div class="form-group">
+                                <label for="studentClass">Class*</label>
+                                <select id="studentClass" required>
+                                    <option value="">Select Class</option>
+                                    <option value="nursery">Nursery</option>
+                                    <option value="lkg">LKG</option>
+                                    <option value="ukg">UKG</option>
+                                    <option value="1">Class 1</option>
+                                    <!-- More classes -->
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group amount-group">
+                            <label for="amount">Amount (₹)*</label>
+                            <div class="amount-input">
+                                <span class="currency-icon">₹</span>
+                                <input type="number" id="amount" required placeholder="0.00" min="1" step="1">
+                            </div>
+                        </div>
+                        
+                        <div class="payment-step">
+                            <div class="step-number">2</div>
+                            <h3>Choose Payment Method</h3>
+                        </div>
+                        
+                        <div class="payment-options">
+                            <div class="upi-option active">
+                                <div class="option-header">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <h4>UPI Payment</h4>
+                                </div>
+                                
+                                <div class="upi-content">
+                                    <div class="qr-container">
+                                        <div class="qr-code">
+                                            <img src="assets/upi-qr.png" alt="UPI QR Code" loading="lazy">
+                                        </div>
+                                        <p class="scan-text">Scan to pay ₹<span id="displayAmount">0</span></p>
+                                    </div>
+                                    
+                                    <div class="or-divider">
+                                        <span>OR</span>
+                                    </div>
+                                    
+                                    <div class="upi-id-section">
+                                        <p>Send payment to our UPI ID:</p>
+                                        <div class="upi-id-display">
+                                            <span>dvconentschool@examplebank</span>
+                                            <button class="copy-btn" onclick="copyUpiId()">
+                                                <i class="far fa-copy"></i> Copy
+                                            </button>
+                                        </div>
+                                        <p class="note"><i class="fas fa-info-circle"></i> Please include Student ID in payment note</p>
+                                    </div>
+                                    
+                                    <div class="upi-apps">
+                                        <p>Supported UPI Apps:</p>
+                                        <div class="apps-grid">
+                                            <img src="assets/gpay.png" alt="Google Pay">
+                                            <img src="assets/phonepe.png" alt="PhonePe">
+                                            <img src="assets/paytm.png" alt="Paytm">
+                                            <img src="assets/bhim.png" alt="BHIM">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-step">
+                            <div class="step-number">3</div>
+                            <h3>Confirm Payment</h3>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="utrNumber">Transaction ID/UTR Number*</label>
+                            <input type="text" id="utrNumber" required placeholder="From payment receipt">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="paymentDate">Payment Date*</label>
+                            <input type="date" id="paymentDate" required>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="receiptCheck" required>
+                            <label for="receiptCheck">I have saved the payment receipt</label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Submit Payment Details
+                        </button>
+                    </form>
+                    
+                    <div id="successMessage" class="success-message">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Payment Successful!</h3>
+                        <p>Your payment details have been recorded. You'll receive a confirmation email shortly.</p>
+                        <a href="index.html" class="back-home-btn">Return to Home</a>
+                    </div>
+                </div>
+                
+                <div class="payment-help">
+                    <div class="help-header">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Need Help With Payment?</h3>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <p><a href="tel:+911234567890">+91 9118565382</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p><a href="mailto:accounts@dvconvent.edu">accounts@dvconvent.edu</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <p>Support available Mon-Sat, 9AM to 5PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>D V Convent School</h4>
+                    <p>Providing quality education since 2015</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="important-updates.html">Announcements</a></li>
+                        <li><a href="registration-admission.html">Admissions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Akodha,Rohi,Bhadohi </p>
+                    <p>Uttar Pradesh - 221308, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 D V Convent School. All rights reserved.</p>
+            </div>
+        </footer>
+    </section>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            nav.classList.toggle('show');
+        });
+
+        // Update displayed amount
+        document.getElementById('amount').addEventListener('input', function() {
+            document.getElementById('displayAmount').textContent = this.value || '0';
+        });
+
+        // Copy UPI ID
+        function copyUpiId() {
+            const upiId = 'dvconentschool@examplebank';
+            navigator.clipboard.writeText(upiId).then(() => {
+                const copyBtn = document.querySelector('.copy-btn');
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => {
+                    copyBtn.innerHTML = '<i class="far fa-copy"></i> Copy';
+                }, 2000);
+            });
+        }
+
+        // Form submission
+        document.getElementById('paymentDetailsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+        });
+
+        // Loading overlay
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loadingOverlay').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                }, 300);
+            }, 500);
+        });
+    </script>
+</body>
+</html>

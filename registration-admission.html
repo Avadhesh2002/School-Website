@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2c3e50">
+    <title>D V Convent School - Admission & Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preload" href="assets/backgroundvideo5.mp4" as="video" type="video/mp4">
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline class="back-vid" poster="assets/video-poster.jpg">
+        <source src="assets/backgroundvideo5.mp4" type="video/mp4">
+        <img src="assets/fallback-bg.jpg" alt="School Background">
+    </video>
+
+    <section class="main-section">
+        <header>
+            <div class="header-content">
+                <h1>D V Convent School</h1>
+                <p>Admission Process 2024-2025</p>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="mainNav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="online-payment.html">Online Payment</a></li>
+                    <li><a href="important-updates.html">Important Updates</a></li>
+                    <li><a href="registration-admission.html" class="active">Admission</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="admission-container">
+                <div class="admission-header">
+                    <h2><i class="fas fa-user-graduate"></i> Admission Process</h2>
+                    <div class="admission-steps">
+                        <div class="step active" data-step="1">
+                            <span class="step-number">1</span>
+                            <span class="step-title">Application</span>
+                        </div>
+                        <div class="step" data-step="2">
+                            <span class="step-number">2</span>
+                            <span class="step-title">Assessment</span>
+                        </div>
+                        <div class="step" data-step="3">
+                            <span class="step-number">3</span>
+                            <span class="step-title">Documentation</span>
+                        </div>
+                        <div class="step" data-step="4">
+                            <span class="step-number">4</span>
+                            <span class="step-title">Confirmation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admission-content">
+                    <div class="process-info">
+                        <h3>Admission for Academic Year 2024-2025</h3>
+                        <p>We are now accepting applications for Nursery to Class 10. Our admission process is designed to be simple and transparent.</p>
+                        
+                        <div class="info-cards">
+                            <div class="info-card">
+                                <i class="fas fa-calendar-alt"></i>
+                                <h4>Important Dates</h4>
+                                <ul>
+                                    <li><strong>Application Start:</strong> January 1, 2024</li>
+                                    <li><strong>Last Date:</strong> March 31, 2024</li>
+                                    <li><strong>Assessment Dates:</strong> April 10-15, 2024</li>
+                                    <li><strong>Result Declaration:</strong> April 30, 2024</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="info-card">
+                                <i class="fas fa-rupee-sign"></i>
+                                <h4>Fee Structure</h4>
+                                <ul>
+                                    <li><strong>Registration Fee:</strong> ₹500 (Non-refundable)</li>
+                                    <li><strong>Annual Charges:</strong> ₹15,000</li>
+                                    <li><strong>Monthly Tuition:</strong> ₹3,000</li>
+                                    <li><strong>Transport (Optional):</strong> ₹1,500/month</li>
+                                </ul>
+                                <a href="#" class="download-btn">
+                                    <i class="fas fa-download"></i> Download Complete Fee Structure
+                                </a>
+                            </div>
+                            
+                            <div class="info-card">
+                                <i class="fas fa-file-alt"></i>
+                                <h4>Required Documents</h4>
+                                <ul>
+                                    <li>Birth Certificate</li>
+                                    <li>Aadhaar Card (Child & Parents)</li>
+                                    <li>Previous School Report Card (If applicable)</li>
+                                    <li>Passport Size Photos (4 copies)</li>
+                                    <li>Address Proof</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admission-form-container">
+                        <div class="form-toggle">
+                            <button class="toggle-btn active" data-form="online">Online Application</button>
+                            <button class="toggle-btn" data-form="offline">Offline Application</button>
+                        </div>
+                        
+                        <form id="admissionForm" class="admission-form">
+                            <h3><i class="fas fa-pencil-alt"></i> Application Form</h3>
+                            
+                            <div class="form-section">
+                                <h4>Student Information</h4>
+                                <div class="form-group">
+                                    <label for="studentName">Full Name*</label>
+                                    <input type="text" id="studentName" required>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="dob">Date of Birth*</label>
+                                        <input type="date" id="dob" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender">Gender*</label>
+                                        <select id="gender" required>
+                                            <option value="">Select</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="applyingClass">Class Applying For*</label>
+                                    <select id="applyingClass" required>
+                                        <option value="">Select Class</option>
+                                        <option value="nursery">Nursery</option>
+                                        <option value="lkg">LKG</option>
+                                        <option value="ukg">UKG</option>
+                                        <option value="1">Class 1</option>
+                                        <!-- More class options -->
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h4>Parent/Guardian Information</h4>
+                                <div class="form-group">
+                                    <label for="fatherName">Father's Name*</label>
+                                    <input type="text" id="fatherName" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="motherName">Mother's Name*</label>
+                                    <input type="text" id="motherName" required>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="parentEmail">Email*</label>
+                                        <input type="email" id="parentEmail" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="parentMobile">Mobile Number*</label>
+                                        <input type="tel" id="parentMobile" required pattern="[0-9]{10}">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="parentOccupation">Occupation</label>
+                                    <input type="text" id="parentOccupation">
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h4>Address Information</h4>
+                                <div class="form-group">
+                                    <label for="address">Full Address*</label>
+                                    <textarea id="address" rows="3" required></textarea>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="city">City*</label>
+                                        <input type="text" id="city" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pincode">Pincode*</label>
+                                        <input type="text" id="pincode" required pattern="[0-9]{6}">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h4>Additional Information</h4>
+                                <div class="form-group">
+                                    <label for="previousSchool">Previous School (If any)</label>
+                                    <input type="text" id="previousSchool">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="reasonForChange">Reason for School Change</label>
+                                    <textarea id="reasonForChange" rows="2"></textarea>
+                                </div>
+                                
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="transportRequired">
+                                    <label for="transportRequired">Require School Transport Facility</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h4>Documents Upload</h4>
+                                <div class="upload-group">
+                                    <label for="birthCertificate">Birth Certificate*</label>
+                                    <input type="file" id="birthCertificate" accept=".pdf,.jpg,.png" required>
+                                </div>
+                                
+                                <div class="upload-group">
+                                    <label for="aadhaarCard">Aadhaar Card*</label>
+                                    <input type="file" id="aadhaarCard" accept=".pdf,.jpg,.png" required>
+                                </div>
+                                
+                                <div class="upload-group">
+                                    <label for="photo">Passport Photo*</label>
+                                    <input type="file" id="photo" accept=".jpg,.png" required>
+                                </div>
+                                
+                                <div class="upload-group">
+                                    <label for="reportCard">Previous Report Card (If applicable)</label>
+                                    <input type="file" id="reportCard" accept=".pdf,.jpg,.png">
+                                </div>
+                            </div>
+                            
+                            <div class="form-footer">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="declaration" required>
+                                    <label for="declaration">I declare that all information provided is accurate*</label>
+                                </div>
+                                
+                                <button type="submit" class="submit-btn">
+                                    <i class="fas fa-paper-plane"></i> Submit Application
+                                </button>
+                                
+                                <p class="form-note">After submission, you'll receive an application number and payment details via email/SMS.</p>
+                            </div>
+                        </form>
+                        
+                        <div class="offline-application">
+                            <h3><i class="fas fa-map-marker-alt"></i> Offline Application</h3>
+                            <p>You can also apply offline by visiting our school campus:</p>
+                            
+                            <div class="offline-info">
+                                <div class="info-item">
+                                    <i class="fas fa-clock"></i>
+                                    <div>
+                                        <h4>Office Hours</h4>
+                                        <p>Monday to Saturday<br>9:00 AM to 3:00 PM</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="info-item">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    <div>
+                                        <h4>School Address</h4>
+                                        <p>D V Convent School<br>
+                                        123 Education Street<br>
+                                        Knowledge City - 560001</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="info-item">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <div>
+                                        <h4>Contact</h4>
+                                        <p><a href="tel:+911234567890">+91 12345 67890</a><br>
+                                        <a href="mailto:admissions@dvconvent.edu">admissions@dvconvent.edu</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="download-section">
+                                <h4>Download Forms</h4>
+                                <div class="download-btns">
+                                    <a href="#" class="download-btn">
+                                        <i class="fas fa-download"></i> Admission Form
+                                    </a>
+                                    <a href="#" class="download-btn">
+                                        <i class="fas fa-download"></i> Fee Structure
+                                    </a>
+                                    <a href="#" class="download-btn">
+                                        <i class="fas fa-download"></i> Document Checklist
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2><i class="fas fa-question-circle"></i> Admission FAQs</h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What is the age criteria for Nursery admission?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>The child should be 3+ years as of June 1, 2024 for Nursery admission. For LKG, the minimum age is 4+, and for UKG it's 5+.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Is there any entrance test for admission?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>For Nursery to UKG, we conduct an interactive session with the child and parents. For Class 1 onwards, there's a basic assessment in English, Math, and General Awareness.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What is the student-teacher ratio?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We maintain a healthy ratio of 25:1 for primary classes and 30:1 for higher classes, with additional support staff for specialized subjects.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Are there any scholarships available?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer merit-based scholarships for students from Class 3 onwards. There are also need-based concessions for economically weaker students.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What COVID precautions are in place?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We follow all government guidelines including regular sanitization, temperature checks, and optional hybrid learning models when needed.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-contact">
+                    <p>Still have questions? Contact our admission counselor:</p>
+                    <a href="tel:+919876543210" class="contact-btn">
+                        <i class="fas fa-phone-alt"></i> Call Now: +91 98765 43210
+                    </a>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>About Our School</h4>
+                    <p>D V Convent School has been providing quality education since 1995, nurturing young minds for a brighter future.</p>
+                    <div class="contact">
+                        <p><i class="fas fa-phone-alt"></i> <a href="tel:+911234567890">+91 9118565382</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@dvconvent.edu">info@dvconvent.edu</a></p>
+                    </div>
+                </div>
+                
+                <div class="footer-section quick-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="important-updates.html">Announcements</a></li>
+                        <li><a href="registration-admission.html">Admission Process</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="enquiry.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section social">
+                    <h4>Stay Connected</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="subscribe">
+                        <p>Get admission updates:</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 D V Convent School. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
+            </div>
+        </footer>
+    </section>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            nav.classList.toggle('show');
+        });
+
+        // Admission steps interaction
+        document.querySelectorAll('.step').forEach(step => {
+            step.addEventListener('click', function() {
+                document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+                this.classList.add('active');
+                // You would typically show different form sections here
+            });
+        });
+
+        // Form toggle
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const formType = this.getAttribute('data-form');
+                if (formType === 'online') {
+                    document.querySelector('.admission-form').style.display = 'block';
+                    document.querySelector('.offline-application').style.display = 'none';
+                } else {
+                    document.querySelector('.admission-form').style.display = 'none';
+                    document.querySelector('.offline-application').style.display = 'block';
+                }
+            });
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                question.classList.toggle('active');
+                
+                if (question.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                } else {
+                    answer.style.maxHeight = '0';
+                    icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('admissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate form
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value) {
+                    field.style.borderColor = '#e74c3c';
+                    isValid = false;
+                } else {
+                    field.style.borderColor = '#ddd';
+                }
+            });
+            
+            if (isValid) {
+                // Show loading overlay
+                document.getElementById('loadingOverlay').style.display = 'flex';
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                    alert('Application submitted successfully! You will receive a confirmation email shortly.');
+                    this.reset();
+                }, 2000);
+            } else {
+                alert('Please fill all required fields marked with *');
+            }
+        });
+
+        // Loading overlay
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loadingOverlay').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                }, 300);
+            }, 500);
+        });
+    </script>
+</body>
+</html>

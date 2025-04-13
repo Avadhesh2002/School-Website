@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2c3e50">
+    <title>D V Convent School - Admission Enquiry</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preload" href="assets/backgroundvideo5.mp4" as="video" type="video/mp4">
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline class="back-vid" poster="assets/video-poster.jpg">
+        <source src="assets/backgroundvideo5.mp4" type="video/mp4">
+        <img src="assets/fallback-bg.jpg" alt="School Background">
+    </video>
+
+    <section class="main-section">
+        <header>
+            <div class="header-content">
+                <h1>D V Convent School</h1>
+                <p>Admission Enquiry</p>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="mainNav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="online-payment.html">Online Payment</a></li>
+                    <li><a href="important-updates.html">Important Updates</a></li>
+                    <li><a href="registration-admission.html">Registration & Admission</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="enquiry.html" class="active">Enquiry</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="enquiry-container">
+                <div class="enquiry-header">
+                    <h2><i class="fas fa-question-circle"></i> Admission Enquiry</h2>
+                    <p>Have questions about our admission process? Fill out the form below and our team will contact you within 24 hours.</p>
+                </div>
+
+                <div class="enquiry-content">
+                    <div class="enquiry-form-container">
+                        <form id="enquiryForm" class="enquiry-form">
+                            <div class="form-section">
+                                <h3><i class="fas fa-child"></i> Child Information</h3>
+                                <div class="form-group">
+                                    <label for="childName">Child's Full Name*</label>
+                                    <input type="text" id="childName" required>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="childDob">Date of Birth*</label>
+                                        <input type="date" id="childDob" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="childGender">Gender*</label>
+                                        <select id="childGender" required>
+                                            <option value="">Select</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="applyingClass">Class Applying For*</label>
+                                    <select id="applyingClass" required>
+                                        <option value="">Select Class</option>
+                                        <option value="nursery">Nursery (Age 3+)</option>
+                                        <option value="lkg">LKG (Age 4+)</option>
+                                        <option value="ukg">UKG (Age 5+)</option>
+                                        <option value="1">Class 1 (Age 6+)</option>
+                                        <!-- More class options -->
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="currentSchool">Current School (If applicable)</label>
+                                    <input type="text" id="currentSchool">
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h3><i class="fas fa-user-friends"></i> Parent/Guardian Information</h3>
+                                <div class="form-group">
+                                    <label for="parentName">Parent/Guardian Name*</label>
+                                    <input type="text" id="parentName" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="relation">Relationship to Child*</label>
+                                    <select id="relation" required>
+                                        <option value="">Select</option>
+                                        <option value="father">Father</option>
+                                        <option value="mother">Mother</option>
+                                        <option value="guardian">Guardian</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="parentEmail">Email*</label>
+                                        <input type="email" id="parentEmail" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="parentMobile">Mobile Number*</label>
+                                        <input type="tel" id="parentMobile" required pattern="[0-9]{10}">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="parentOccupation">Occupation</label>
+                                    <input type="text" id="parentOccupation">
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h3><i class="fas fa-map-marker-alt"></i> Address Information</h3>
+                                <div class="form-group">
+                                    <label for="address">Full Address*</label>
+                                    <textarea id="address" rows="3" required></textarea>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="city">City*</label>
+                                        <input type="text" id="city" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pincode">Pincode*</label>
+                                        <input type="text" id="pincode" required pattern="[0-9]{6}">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h3><i class="fas fa-comment-alt"></i> Additional Information</h3>
+                                <div class="form-group">
+                                    <label for="hearAbout">How did you hear about us?*</label>
+                                    <select id="hearAbout" required>
+                                        <option value="">Select</option>
+                                        <option value="friend">Friend/Family</option>
+                                        <option value="social">Social Media</option>
+                                        <option value="newspaper">Newspaper</option>
+                                        <option value="hoarding">Hoarding/Poster</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="questions">Specific Questions</label>
+                                    <textarea id="questions" rows="3" placeholder="Any specific questions or requirements..."></textarea>
+                                </div>
+                                
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="schoolTour">
+                                    <label for="schoolTour">I would like to schedule a school tour</label>
+                                </div>
+                                
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="prospectus">
+                                    <label for="prospectus">Please send me the school prospectus</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-footer">
+                                <div class="checkbox-group declaration">
+                                    <input type="checkbox" id="declaration" required>
+                                    <label for="declaration">I declare that all information provided is accurate*</label>
+                                </div>
+                                
+                                <button type="submit" class="submit-btn">
+                                    <i class="fas fa-paper-plane"></i> Submit Enquiry
+                                </button>
+                                
+                                <div class="form-note">
+                                    <p><i class="fas fa-info-circle"></i> Our admission team will contact you within 24 hours. For urgent enquiries, please call <a href="tel:+911234567890">+91 12345 67890</a>.</p>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <div id="successMessage" class="success-message">
+                            <div class="success-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3>Enquiry Submitted Successfully!</h3>
+                            <p>Thank you for your interest in D V Convent School. We have received your enquiry and will contact you shortly.</p>
+                            <div class="success-details">
+                                <p><strong>Reference Number:</strong> <span id="refNumber">ENQ-2023-00142</span></p>
+                                <p>A confirmation has been sent to your email address.</p>
+                            </div>
+                            <a href="index.html" class="back-home-btn">Back to Home</a>
+                        </div>
+                    </div>
+                    
+                    <div class="enquiry-info">
+                        <div class="info-card">
+                            <h3><i class="fas fa-clock"></i> Admission Office Hours</h3>
+                            <ul class="timings">
+                                <li><strong>Monday-Friday:</strong> 8:30 AM to 4:00 PM</li>
+                                <li><strong>Saturday:</strong> 9:00 AM to 1:00 PM</li>
+                                <li><strong>Sunday:</strong> Closed</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3><i class="fas fa-phone-alt"></i> Contact Information</h3>
+                            <ul class="contact-details">
+                                <li>
+                                    <i class="fas fa-phone"></i>
+                                    <a href="tel:+911234567890">+91 9118565382</a> (Admission Office)
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:admissions@dvconvent.edu">admissions@dvconvent.edu</a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    D V Convent School<br>
+                                    Akodha,Rohi,<br>
+                                    Bhadohi - 221308
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3><i class="fas fa-question"></i> Quick Answers</h3>
+                            <div class="faq-preview">
+                                <div class="faq-item">
+                                    <h4>What is the age criteria for Nursery?</h4>
+                                    <p>Child should be 3+ years as of June 1st of the admission year.</p>
+                                </div>
+                                <div class="faq-item">
+                                    <h4>When does the admission process begin?</h4>
+                                    <p>Admissions for the next academic year typically begin in November.</p>
+                                </div>
+                                <a href="registration-admission.html" class="view-more">View More FAQs →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card map-card">
+                            <h3><i class="fas fa-map-marked-alt"></i> School Location</h3>
+                            <div class="map-container">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.123456789012!2d77.12345678901234!3d12.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDA3JzI0LjQiTiA3N8KwMDcnMjQuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" 
+                                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>About Our School</h4>
+                    <p>D V Convent School has been providing quality education since 1995, nurturing young minds for a brighter future.</p>
+                </div>
+                
+                <div class="footer-section quick-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="important-updates.html">Announcements</a></li>
+                        <li><a href="registration-admission.html">Admission Process</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="enquiry.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section social">
+                    <h4>Stay Connected</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="subscribe">
+                        <p>Get admission updates:</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 D V Convent School. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
+            </div>
+        </footer>
+    </section>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            nav.classList.toggle('show');
+        });
+
+        // Form submission
+        document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate form
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value) {
+                    field.style.borderColor = '#e74c3c';
+                    isValid = false;
+                } else {
+                    field.style.borderColor = '#ddd';
+                }
+            });
+            
+            if (isValid) {
+                // Show loading overlay
+                document.getElementById('loadingOverlay').style.display = 'flex';
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                    
+                    // Hide form and show success message
+                    this.style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                    
+                    // Generate random reference number
+                    const refNumber = 'ENQ-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
+                    document.getElementById('refNumber').textContent = refNumber;
+                    
+                    // Scroll to success message
+                    document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+                }, 1500);
+            } else {
+                alert('Please fill all required fields marked with *');
+            }
+        });
+
+        // Date of birth validation
+        document.getElementById('childDob').addEventListener('change', function() {
+            const dob = new Date(this.value);
+            const today = new Date();
+            const age = today.getFullYear() - dob.getFullYear();
+            
+            if (age < 3) {
+                alert('Child must be at least 3 years old for admission');
+                this.value = '';
+            }
+        });
+
+        // Loading overlay
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loadingOverlay').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                }, 300);
+            }, 500);
+        });
+
+        // Input validation styling
+        document.querySelectorAll('input, select, textarea').forEach(input => {
+            input.addEventListener('input', function() {
+                if (this.checkValidity()) {
+                    this.style.borderColor = '#ddd';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

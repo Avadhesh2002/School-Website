@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2c3e50">
+    <title>D V Convent School - Photo Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preload" href="assets/backgroundvideo5.mp4" as="video" type="video/mp4">
+    <!-- Lightbox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline class="back-vid" poster="assets/video-poster.jpg">
+        <source src="assets/backgroundvideo5.mp4" type="video/mp4">
+        <img src="assets/fallback-bg.jpg" alt="School Background">
+    </video>
+
+    <section class="main-section">
+        <header>
+            <div class="header-content">
+                <h1>D V Convent School</h1>
+                <p>Our Memories</p>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="mainNav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="online-payment.html">Online Payment</a></li>
+                    <li><a href="important-updates.html">Important Updates</a></li>
+                    <li><a href="registration-admission.html">Registration & Admission</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="gallery-container">
+                <div class="gallery-header">
+                    <h2><i class="fas fa-images"></i> School Gallery</h2>
+                    <p>Explore moments from our campus life, events, and activities</p>
+                    
+                    <div class="gallery-controls">
+                        <div class="gallery-search">
+                            <input type="text" id="gallerySearch" placeholder="Search photos...">
+                            <button type="button"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="gallery-filter">
+                            <select id="galleryFilter">
+                                <option value="all">All Categories</option>
+                                <option value="events">Events</option>
+                                <option value="sports">Sports</option>
+                                <option value="academics">Academics</option>
+                                <option value="cultural">Cultural</option>
+                                <option value="infrastructure">Infrastructure</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-grid" id="photoGallery">
+                    <!-- Gallery Item 1 -->
+                    <div class="gallery-item" data-category="events" data-tags="annual day celebration">
+                        <a href="assets/gallery/annual-day-1.jpg" data-lightbox="events" data-title="Annual Day Celebration 2023">
+                            <img src="assets/gallery/thumbs/annual-day-1-thumb.jpg" alt="Annual Day Celebration" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-caption">
+                                    <h3>Annual Day 2023</h3>
+                                    <p>Our students performing on stage</p>
+                                    <span class="gallery-date"><i class="far fa-calendar-alt"></i> 15 Jan 2023</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Gallery Item 2 -->
+                    <div class="gallery-item" data-category="sports" data-tags="sports day competition">
+                        <a href="assets/gallery/sports-day-1.jpg" data-lightbox="sports" data-title="Sports Day 2023">
+                            <img src="assets/gallery/thumbs/sports-day-1-thumb.jpg" alt="Sports Day" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-caption">
+                                    <h3>Sports Day</h3>
+                                    <p>Students participating in relay race</p>
+                                    <span class="gallery-date"><i class="far fa-calendar-alt"></i> 20 Feb 2023</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Gallery Item 3 -->
+                    <div class="gallery-item" data-category="academics" data-tags="science exhibition project">
+                        <a href="assets/gallery/science-exhibition-1.jpg" data-lightbox="academics" data-title="Science Exhibition 2023">
+                            <img src="assets/gallery/thumbs/science-exhibition-1-thumb.jpg" alt="Science Exhibition" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-caption">
+                                    <h3>Science Exhibition</h3>
+                                    <p>Students showcasing their projects</p>
+                                    <span class="gallery-date"><i class="far fa-calendar-alt"></i> 10 Mar 2023</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Gallery Item 4 -->
+                    <div class="gallery-item" data-category="cultural" data-tags="dance music performance">
+                        <a href="assets/gallery/cultural-day-1.jpg" data-lightbox="cultural" data-title="Cultural Fest 2023">
+                            <img src="assets/gallery/thumbs/cultural-day-1-thumb.jpg" alt="Cultural Fest" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-caption">
+                                    <h3>Cultural Fest</h3>
+                                    <p>Traditional dance performance</p>
+                                    <span class="gallery-date"><i class="far fa-calendar-alt"></i> 5 Apr 2023</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Gallery Item 5 -->
+                    <div class="gallery-item" data-category="infrastructure" data-tags="library books reading">
+                        <a href="assets/gallery/library-1.jpg" data-lightbox="infrastructure" data-title="School Library">
+                            <img src="assets/gallery/thumbs/library-1-thumb.jpg" alt="School Library" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-caption">
+                                    <h3>School Library</h3>
+                                    <p>Students in our newly renovated library</p>
+                                    <span class="gallery-date"><i class="far fa-calendar-alt"></i> 15 May 2023</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Gallery Item 6 -->
+                    <div class="gallery-item" data-category="events" data-tags="graduation ceremony">
+                        <a href="assets/gallery/graduation-1.jpg" data-lightbox="events" data-title="Graduation Day 2023">
+                            <img src="assets/gallery/thumbs/graduation-1-thumb.jpg" alt="Graduation Day" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-caption">
+                                    <h3>Graduation Day</h3>
+                                    <p>Class 10 students receiving certificates</p>
+                                    <span class="gallery-date"><i class="far fa-calendar-alt"></i> 25 May 2023</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Gallery Item 7 -->
+                    <div class="gallery-item" data-category="sports" data-tags="cricket tournament">
+                        <a href="assets/gallery/cricket-1.jpg" data-lightbox="sports" data-title="Inter-School Cricket Tournament">
+                            <img src="assets/gallery/thumbs/cricket-1-thumb.jpg" alt="Cricket Tournament" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-caption">
+                                    <h3>Cricket Tournament</h3>
+                                    <p>Our school team won first prize</p>
+                                    <span class="gallery-date"><i class="far fa-calendar-alt"></i> 10 Jun 2023</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Gallery Item 8 -->
+                    <div class="gallery-item" data-category="academics" data-tags="lab experiment">
+                        <a href="assets/gallery/science-lab-1.jpg" data-lightbox="academics" data-title="Science Lab Activity">
+                            <img src="assets/gallery/thumbs/science-lab-1-thumb.jpg" alt="Science Lab" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-caption">
+                                    <h3>Science Lab</h3>
+                                    <p>Students conducting experiments</p>
+                                    <span class="gallery-date"><i class="far fa-calendar-alt"></i> 20 Jun 2023</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-load-more">
+                    <button id="loadMore" class="load-more-btn">
+                        <i class="fas fa-plus"></i> Load More Photos
+                    </button>
+                </div>
+
+                <div class="video-gallery">
+                    <h3><i class="fas fa-video"></i> School Videos</h3>
+                    <p>Watch highlights from our school events and activities</p>
+                    
+                    <div class="video-grid">
+                        <div class="video-item">
+                            <div class="video-thumbnail" data-video-id="dQw4w9WgXcQ">
+                                <img src="assets/gallery/video-thumb-1.jpg" alt="School Annual Day 2023" loading="lazy">
+                                <div class="play-button"><i class="fas fa-play"></i></div>
+                            </div>
+                            <h4>Annual Day 2023 Highlights</h4>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail" data-video-id="9bZkp7q19f0">
+                                <img src="assets/gallery/video-thumb-2.jpg" alt="Sports Day 2023" loading="lazy">
+                                <div class="play-button"><i class="fas fa-play"></i></div>
+                            </div>
+                            <h4>Sports Day 2023</h4>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail" data-video-id="kJQP7kiw5Fk">
+                                <img src="assets/gallery/video-thumb-3.jpg" alt="School Tour" loading="lazy">
+                                <div class="play-button"><i class="fas fa-play"></i></div>
+                            </div>
+                            <h4>Virtual School Tour</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>About Our School</h4>
+                    <p>D V Convent School has been providing quality education since 1995, nurturing young minds for a brighter future.</p>
+                    <div class="contact">
+                        <p><i class="fas fa-phone-alt"></i> <a href="tel:+911234567890">+91 9118565382</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@dvconvent.edu">info@dvconvent.edu</a></p>
+                    </div>
+                </div>
+                
+                <div class="footer-section quick-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="important-updates.html">Announcements</a></li>
+                        <li><a href="registration-admission.html">Admission Process</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="enquiry.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section social">
+                    <h4>Stay Connected</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="subscribe">
+                        <p>Get gallery updates:</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 D V Convent School. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
+            </div>
+        </footer>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="video-container">
+                <iframe id="ytplayer" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            nav.classList.toggle('show');
+        });
+
+        // Gallery Filtering
+        document.getElementById('galleryFilter').addEventListener('change', function() {
+            const category = this.value;
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            galleryItems.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Gallery Search
+        document.querySelector('#gallerySearch + button').addEventListener('click', searchGallery);
+        document.getElementById('gallerySearch').addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') searchGallery();
+        });
+        
+        function searchGallery() {
+            const query = document.getElementById('gallerySearch').value.toLowerCase();
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            galleryItems.forEach(item => {
+                const tags = item.getAttribute('data-tags').toLowerCase();
+                const caption = item.querySelector('.gallery-caption h3').textContent.toLowerCase();
+                const matches = tags.includes(query) || caption.includes(query);
+                
+                item.style.display = matches ? 'block' : 'none';
+            });
+        }
+
+        // Load More Photos
+        document.getElementById('loadMore').addEventListener('click', function() {
+            // Simulate loading more photos
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+            
+            setTimeout(() => {
+                // In a real implementation, you would fetch more photos from server
+                alert('More photos would be loaded in a real implementation');
+                this.innerHTML = '<i class="fas fa-plus"></i> Load More Photos';
+            }, 1000);
+        });
+
+        // Video Modal
+        const videoModal = document.getElementById('videoModal');
+        const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+        
+        videoThumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                const videoId = this.getAttribute('data-video-id');
+                const iframe = document.getElementById('ytplayer');
+                
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                videoModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        document.querySelector('.close-modal').addEventListener('click', function() {
+            const iframe = document.getElementById('ytplayer');
+            iframe.src = '';
+            videoModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        videoModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                const iframe = document.getElementById('ytplayer');
+                iframe.src = '';
+                this.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Lightbox configuration
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': 'Image %1 of %2',
+            'positionFromTop': 100,
+            'disableScrolling': true
+        });
+
+        // Loading overlay
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loadingOverlay').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                }, 300);
+            }, 500);
+        });
+    </script>
+</body>
+</html>

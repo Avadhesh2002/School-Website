@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2c3e50">
+    <title>D V Convent School - Important Updates</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preload" href="assets/backgroundvideo5.mp4" as="video" type="video/mp4">
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline class="back-vid" poster="assets/video-poster.jpg">
+        <source src="assets/backgroundvideo5.mp4" type="video/mp4">
+        <img src="assets/fallback-bg.jpg" alt="School Background">
+    </video>
+
+    <section class="main-section">
+        <header>
+            <div class="header-content">
+                <h1>D V Convent School</h1>
+                <p>Important Updates & Announcements</p>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="mainNav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="online-payment.html">Online Payment</a></li>
+                    <li><a href="important-updates.html" class="active">Important Updates</a></li>
+                    <li><a href="registration-admission.html">Registration & Admission</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="updates-container">
+                <div class="updates-header">
+                    <h2><i class="fas fa-bullhorn"></i> Latest Updates</h2>
+                    <div class="update-filters">
+                        <button class="filter-btn active" data-filter="all">All Updates</button>
+                        <button class="filter-btn" data-filter="academic">Academic</button>
+                        <button class="filter-btn" data-filter="event">Events</button>
+                        <button class="filter-btn" data-filter="holiday">Holidays</button>
+                    </div>
+                </div>
+
+                <div class="updates-grid">
+                    <!-- Update Card 1 -->
+                    <div class="update-card academic" data-category="academic">
+                        <div class="update-badge academic">
+                            <i class="fas fa-book"></i> Academic
+                        </div>
+                        <div class="update-date">
+                            <span class="day">15</span>
+                            <span class="month">Nov</span>
+                            <span class="year">2023</span>
+                        </div>
+                        <div class="update-content">
+                            <h3>Mid-Term Examination Schedule</h3>
+                            <p>The schedule for mid-term examinations has been released. Please check the notice board or download the PDF below.</p>
+                            <div class="update-meta">
+                                <span class="priority high"><i class="fas fa-exclamation-circle"></i> High Priority</span>
+                                <span class="posted-by">Posted by: Principal's Office</span>
+                            </div>
+                            <div class="update-actions">
+                                <a href="#" class="download-btn">
+                                    <i class="fas fa-download"></i> Download Schedule
+                                </a>
+                                <button class="share-btn" onclick="shareUpdate('Mid-Term Examination Schedule')">
+                                    <i class="fas fa-share-alt"></i> Share
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Update Card 2 -->
+                    <div class="update-card event" data-category="event">
+                        <div class="update-badge event">
+                            <i class="fas fa-calendar-alt"></i> Event
+                        </div>
+                        <div class="update-date">
+                            <span class="day">20</span>
+                            <span class="month">Nov</span>
+                            <span class="year">2023</span>
+                        </div>
+                        <div class="update-content">
+                            <h3>Annual Sports Day</h3>
+                            <p>Our Annual Sports Day will be held on November 20th. All parents are invited to attend the event from 9:00 AM onwards.</p>
+                            <div class="update-meta">
+                                <span class="priority medium"><i class="fas fa-info-circle"></i> Medium Priority</span>
+                                <span class="posted-by">Posted by: Sports Department</span>
+                            </div>
+                            <div class="update-actions">
+                                <a href="#" class="details-btn">
+                                    <i class="fas fa-info-circle"></i> Event Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Update Card 3 -->
+                    <div class="update-card holiday" data-category="holiday">
+                        <div class="update-badge holiday">
+                            <i class="fas fa-umbrella-beach"></i> Holiday
+                        </div>
+                        <div class="update-date">
+                            <span class="day">12</span>
+                            <span class="month">Nov</span>
+                            <span class="year">2023</span>
+                        </div>
+                        <div class="update-content">
+                            <h3>Diwali Holidays Announcement</h3>
+                            <p>The school will remain closed from November 12th to November 16th for Diwali celebrations. Classes will resume on November 17th.</p>
+                            <div class="update-meta">
+                                <span class="priority low"><i class="fas fa-check-circle"></i> General Information</span>
+                                <span class="posted-by">Posted by: Administration</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Update Card 4 -->
+                    <div class="update-card academic" data-category="academic">
+                        <div class="update-badge academic">
+                            <i class="fas fa-book"></i> Academic
+                        </div>
+                        <div class="update-date">
+                            <span class="day">05</span>
+                            <span class="month">Nov</span>
+                            <span class="year">2023</span>
+                        </div>
+                        <div class="update-content">
+                            <h3>PTM Schedule for November</h3>
+                            <p>Parent-Teacher Meetings will be held on November 5th from 10:00 AM to 2:00 PM. Please book your slot with the class teacher.</p>
+                            <div class="update-meta">
+                                <span class="priority high"><i class="fas fa-exclamation-circle"></i> High Priority</span>
+                                <span class="posted-by">Posted by: Academic Office</span>
+                            </div>
+                            <div class="update-actions">
+                                <a href="#" class="book-btn">
+                                    <i class="fas fa-calendar-check"></i> Book Your Slot
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Update Card 5 -->
+                    <div class="update-card event" data-category="event">
+                        <div class="update-badge event">
+                            <i class="fas fa-calendar-alt"></i> Event
+                        </div>
+                        <div class="update-date">
+                            <span class="day">25</span>
+                            <span class="month">Oct</span>
+                            <span class="year">2023</span>
+                        </div>
+                        <div class="update-content">
+                            <h3>Science Exhibition 2023</h3>
+                            <p>Our annual science exhibition will showcase innovative projects by students from all grades. Visitors welcome from 10 AM to 3 PM.</p>
+                            <div class="update-meta">
+                                <span class="priority medium"><i class="fas fa-info-circle"></i> Medium Priority</span>
+                                <span class="posted-by">Posted by: Science Department</span>
+                            </div>
+                            <div class="update-actions">
+                                <a href="#" class="details-btn">
+                                    <i class="fas fa-info-circle"></i> More Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Update Card 6 -->
+                    <div class="update-card academic" data-category="academic">
+                        <div class="update-badge academic">
+                            <i class="fas fa-book"></i> Academic
+                        </div>
+                        <div class="update-date">
+                            <span class="day">30</span>
+                            <span class="month">Oct</span>
+                            <span class="year">2023</span>
+                        </div>
+                        <div class="update-content">
+                            <h3>New Library Books Arrival</h3>
+                            <p>We've added 200+ new books to our library. Students can check them out during library hours. A list of new arrivals is available.</p>
+                            <div class="update-meta">
+                                <span class="priority low"><i class="fas fa-check-circle"></i> General Information</span>
+                                <span class="posted-by">Posted by: Library</span>
+                            </div>
+                            <div class="update-actions">
+                                <a href="#" class="download-btn">
+                                    <i class="fas fa-list-ul"></i> Book List
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="updates-archive">
+                    <h3><i class="fas fa-archive"></i> Archive</h3>
+                    <p>Looking for older updates? Browse our archive of past announcements:</p>
+                    <div class="archive-years">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                        <a href="#">2020</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="emergency-notice">
+                <div class="emergency-content">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Emergency Notice</h3>
+                    <p>Due to heavy rains, the school will remain closed tomorrow (November 8th). Stay safe and check back for updates.</p>
+                    <div class="emergency-meta">
+                        <span class="posted-date">Posted: Today at 4:30 PM</span>
+                        <button class="acknowledge-btn">
+                            <i class="fas fa-check"></i> Acknowledge
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>About Our School</h4>
+                    <p>D V Convent School has been providing quality education since 1995, nurturing young minds for a brighter future.</p>
+                    <div class="contact">
+                        <p><i class="fas fa-phone-alt"></i> <a href="tel:+911234567890">+91 9118565382</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@dvconvent.edu">info@dvconvent.edu</a></p>
+                    </div>
+                </div>
+                
+                <div class="footer-section quick-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="important-updates.html">Announcements</a></li>
+                        <li><a href="registration-admission.html">Admission Process</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="enquiry.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section social">
+                    <h4>Stay Connected</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="subscribe">
+                        <p>Get updates via WhatsApp</p>
+                        <a href="#" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Join Group
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 D V Convent School. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
+            </div>
+        </footer>
+    </section>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            nav.classList.toggle('show');
+        });
+
+        // Update filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-filter');
+                const updateCards = document.querySelectorAll('.update-card');
+                
+                if (filter === 'all') {
+                    updateCards.forEach(card => card.style.display = 'flex');
+                } else {
+                    updateCards.forEach(card => {
+                        if (card.getAttribute('data-category') === filter) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+
+        // Share update function
+        function shareUpdate(title) {
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    text: 'Check out this update from D V Convent School',
+                    url: window.location.href
+                }).catch(err => {
+                    console.log('Error sharing:', err);
+                });
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                alert('Share this update:\n' + title + '\n' + window.location.href);
+            }
+        }
+
+        // Acknowledge emergency notice
+        document.querySelector('.acknowledge-btn').addEventListener('click', function() {
+            this.innerHTML = '<i class="fas fa-check"></i> Acknowledged';
+            this.disabled = true;
+            document.querySelector('.emergency-notice').style.opacity = '0.7';
+        });
+
+        // Loading overlay
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loadingOverlay').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                }, 300);
+            }, 500);
+        });
+
+        // Highlight today's date in update cards
+        const today = new Date();
+        const todayDay = today.getDate();
+        const todayMonth = today.toLocaleString('default', { month: 'short' });
+        
+        document.querySelectorAll('.update-date').forEach(dateElement => {
+            const day = dateElement.querySelector('.day').textContent;
+            const month = dateElement.querySelector('.month').textContent;
+            
+            if (parseInt(day) === todayDay && month === todayMonth) {
+                dateElement.classList.add('today');
+            }
+        });
+    </script>
+</body>
+</html>
