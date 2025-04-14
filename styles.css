@@ -2591,16 +2591,5 @@ footer {
     
     .success-message {
         padding: 1.5rem 1rem;
-    }
-    @media (max-width: 768px) {
-    .video-container video {
-        object-fit: cover;
-    }
-
-    body {
-        background-attachment: scroll;
-        background-size: cover;
-    }
-}
-
+  
 }
