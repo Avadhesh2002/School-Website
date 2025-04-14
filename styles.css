@@ -1,12 +1,12 @@
 /* General Styles */
 :root {
-    --primary-color: #2c3e50;
+    --primary-color: #080a0d;
     --primary-light: #3498db;
     --accent-color: #f1c40f;
     --accent-dark: #e67e22;
     --dark-color: #2d3748;
     --light-color: #f4f4f9;
-    --gray-color: #718096;
+    --gray-color: #00b4d4;
     --light-gray: #e2e8f0;
     --mobile-breakpoint: 768px;
     --tablet-breakpoint: 992px;
@@ -78,7 +78,7 @@ body {
         display: block; /* Show image on mobile */
     }
     .main-section {
-        background: url('assets/video-poster.png') center/cover no-repeat;
+        background: url('assets\video-poster.jpg') center/cover no-repeat;
     }
 }
 
