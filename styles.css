@@ -78,7 +78,7 @@ body {
         display: block; /* Show image on mobile */
     }
     .main-section {
-        background: url('assets/fallback-bg.jpg') center/cover no-repeat;
+        background: url('assets/video-poster.jpg') center/cover no-repeat;
     }
 }
 
