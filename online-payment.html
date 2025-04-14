@@ -10,20 +10,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <video autoplay loop muted playsinline class="back-vid" poster="assets/video-poster.jpg">
+        <img src="assets/fallback-bg.jpg" alt="School Background">
+    </video>
     <section class="main-section">
         <header>
             <div class="header-content">
-                <h1>D V Convent School</h1>
-                <p>Secure UPI Payments</p>
-            </div>
+                <img src="assets/logo.png" alt="D V Convent School Logo" class="school-logo">
+                <div class="school-name">
+                    <h1>D V Convent School</h1>
+                   <p>Secure UPI Payments</p>
+                </div>
+            </div> 
             <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
             <nav>
                 <ul id="mainNav">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="online-payment.html">Online Payment</a></li>
-                    <li><a href="important-updates.html" class="active">Important Updates</a></li>
+                    <li><a href="online-payment.html"class="active">Online Payment</a></li>
+                    <li><a href="important-updates.html" >Important Updates</a></li>
                     <li><a href="registration-admission.html">Registration & Admission</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="enquiry.html">Enquiry</a></li>
@@ -167,7 +173,7 @@
                     <div class="contact-info">
                         <div class="contact-item">
                             <i class="fas fa-phone-alt"></i>
-                            <p><a href="tel:+911234567890">+91 9118565382</a></p>
+                            <p><a href="tel:9118565382">9118565382</a></p>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
@@ -184,26 +190,41 @@
         
         <footer>
             <div class="footer-content">
-                <div class="footer-section">
-                    <h4>D V Convent School</h4>
-                    <p>Providing quality education since 2015</p>
+                <div class="footer-section about">
+                    <h4>About Our School</h4>
+                    <p>D V Convent School has been providing quality education since 2015, nurturing young minds for a brighter future.</p>
                 </div>
-                <div class="footer-section">
+                
+                <div class="footer-section quick-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="important-updates.html">Announcements</a></li>
-                        <li><a href="registration-admission.html">Admissions</a></li>
+                        <li><a href="registration-admission.html">Admission Process</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="enquiry.html">Contact Us</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Contact Us</h4>
-                    <p>Akodha,Rohi,Bhadohi </p>
-                    <p>Uttar Pradesh - 221308, India</p>
+                
+                <div class="footer-section social">
+                    <h4>Stay Connected</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="subscribe">
+                        <p>Get admission updates:</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2023 D V Convent School. All rights reserved.</p>
+                <p>&copy; 2015 D V Convent School. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
             </div>
         </footer>
     </section>
