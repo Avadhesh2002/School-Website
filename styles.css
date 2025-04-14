@@ -12,6 +12,7 @@
     --tablet-breakpoint: 992px;
 }
 
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -154,6 +155,416 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
+}
+
+
+/* Payment Page Specific Styles */
+.payment-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.payment-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.payment-header h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.payment-header p {
+    color: var(--gray-color);
+}
+
+.upi-payment-section {
+    margin-top: 2rem;
+}
+
+.payment-step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0 1.5rem;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.payment-step h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* Form Styles */
+#paymentDetailsForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-light);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.amount-group {
+    position: relative;
+}
+
+.amount-input {
+    position: relative;
+}
+
+.currency-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.amount-group input {
+    padding-left: 2.5rem !important;
+}
+
+/* UPI Payment Options */
+.payment-options {
+    margin: 1.5rem 0;
+}
+
+.upi-option {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid #eee;
+}
+
+.option-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.option-header i {
+    color: var(--primary-light);
+    font-size: 1.2rem;
+}
+
+.option-header h4 {
+    color: var(--primary-color);
+}
+
+.qr-container {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.qr-code img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.scan-text {
+    margin-top: 0.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.or-divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: var(--gray-color);
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.or-divider span {
+    padding: 0 1rem;
+}
+
+.upi-id-section {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.upi-id-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    margin: 0.8rem 0;
+    gap: 0.5rem;
+}
+
+.upi-id-display span {
+    font-family: monospace;
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.copy-btn {
+    background: var(--primary-light);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.copy-btn:hover {
+    background: var(--primary-color);
+}
+
+.note {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.note i {
+    color: var(--primary-light);
+}
+
+.upi-apps {
+    margin-top: 2rem;
+}
+
+.upi-apps p {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--gray-color);
+}
+
+.apps-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.apps-grid img {
+    height: 40px;
+    object-fit: contain;
+}
+
+/* Checkbox Styles */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.checkbox-group input {
+    width: auto;
+}
+
+/* Submit Button */
+.submit-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Success Message */
+.success-message {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-top: 2rem;
+    animation: fadeIn 0.5s ease;
+}
+
+.success-icon {
+    font-size: 3rem;
+    color: #28a745;
+    margin-bottom: 1rem;
+}
+
+.success-message h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.success-message p {
+    color: var(--gray-color);
+    margin-bottom: 1.5rem;
+}
+
+.back-home-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.back-home-btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Payment Help Section */
+.payment-help {
+    margin-top: 3rem;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.help-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.help-header i {
+    color: var(--primary-light);
+    font-size: 1.5rem;
+}
+
+.help-header h3 {
+    color: var(--primary-color);
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.contact-item i {
+    color: var(--primary-light);
+    font-size: 1.2rem;
+}
+
+.contact-item p {
+    margin: 0;
+    color: var(--dark-color);
+}
+
+.contact-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
 }
 
 /* Hero Section */
@@ -326,6 +737,7 @@ main {
 .read-more:hover {
     text-decoration: underline;
 }
+
 /* Updates Page Styles */
 .updates-container {
     max-width: 1200px;
@@ -704,6 +1116,7 @@ main {
         gap: 0.5rem;
     }
 }
+
 /* Admission Page Styles */
 .admission-container {
     max-width: 1200px;
@@ -1132,44 +1545,6 @@ main {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .admission-steps {
-        flex-wrap: wrap;
-    }
-    
-    .step {
-        padding: 0.5rem;
-    }
-    
-    .info-cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
-    
-    .offline-info {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .step-title {
-        font-size: 0.8rem;
-    }
-    
-    .toggle-btn {
-        padding: 0.8rem;
-        font-size: 0.9rem;
-    }
-    
-    .download-btns {
-        flex-direction: column;
-    }
-}
 /* Gallery Page Styles */
 .gallery-container {
     max-width: 1200px;
@@ -1472,43 +1847,6 @@ main {
     opacity: 1;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    }
-    
-    .gallery-controls {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .gallery-search {
-        max-width: 100%;
-    }
-    
-    .modal-content {
-        width: 95%;
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .gallery-caption h3 {
-        font-size: 1rem;
-    }
-    
-    .gallery-caption p {
-        font-size: 0.8rem;
-    }
-}
 /* Enquiry Page Styles */
 .enquiry-container {
     max-width: 1200px;
@@ -1830,45 +2168,6 @@ main {
     border: 1px solid var(--light-gray);
 }
 
-/* Responsive Styles */
-@media (min-width: 992px) {
-    .enquiry-content {
-        grid-template-columns: 2fr 1fr;
-    }
-    
-    .enquiry-info {
-        grid-template-columns: 1fr;
-    }
-    
-    .map-card {
-        grid-column: auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
-    
-    .info-card {
-        padding: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .enquiry-header h2 {
-        font-size: 1.8rem;
-    }
-    
-    .form-section h3 {
-        font-size: 1.2rem;
-    }
-    
-    .success-message {
-        padding: 1.5rem 1rem;
-    }
-}
 /* Events Section */
 .events {
     margin: 4rem 0;
@@ -1944,266 +2243,6 @@ main {
 
 .event-link:hover {
     text-decoration: underline;
-}
-
-/* Payment Container */
-.payment-container {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.payment-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.payment-header h2 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    font-size: 2rem;
-}
-
-/* UPI QR Code Section */
-.upi-qr-container {
-    text-align: center;
-    margin: 30px 0;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    border: 1px dashed #ddd;
-}
-
-.upi-qr-code {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 15px;
-    background: white;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-.upi-qr-code img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.upi-instructions {
-    color: var(--gray-color);
-    font-size: 0.9rem;
-    margin-top: 10px;
-}
-
-/* Payment Form */
-.payment-form {
-    margin-top: 30px;
-}
-
-.form-row {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-    flex: 1;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: var(--dark-color);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    font-family: 'Poppins', sans-serif;
-}
-
-.form-group textarea {
-    min-height: 100px;
-    resize: vertical;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: var(--primary-light);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 15px;
-    background: var(--primary-light);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.submit-btn:hover {
-    background: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.success-message {
-    display: none;
-    text-align: center;
-    padding: 20px;
-    background: #d4edda;
-    color: #155724;
-    border-radius: 8px;
-    margin-top: 20px;
-}
-
-.success-message i {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #28a745;
-}
-
-/* Gallery Styles */
-.gallery-section {
-    margin: 2rem 0;
-}
-
-.gallery-filter {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    padding: 0.5rem 1rem;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.filter-btn.active {
-    background: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.gallery-item {
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    aspect-ratio: 4/3;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.05);
-}
-
-.gallery-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover .gallery-caption {
-    transform: translateY(0);
-}
-
-.video-gallery {
-    margin: 3rem 0;
-}
-
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.video-item {
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-.video-thumbnail {
-    position: relative;
-    cursor: pointer;
-    aspect-ratio: 16/9;
-}
-
-.video-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.play-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.7);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.video-thumbnail:hover .play-icon {
-    background: var(--primary-color);
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
-.video-item h4 {
-    padding: 1rem;
-    color: var(--primary-color);
 }
 
 /* Footer */
@@ -2491,14 +2530,18 @@ footer {
         margin: 30px auto;
     }
     
-    .upi-qr-code {
-        width: 180px;
-        height: 180px;
-    }
-    
     .form-row {
         flex-direction: column;
         gap: 0;
+    }
+    
+    .upi-id-display {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -2521,7 +2564,7 @@ footer {
         font-size: 1.8rem;
     }
     
-    .upi-qr-code {
+    .qr-code {
         width: 160px;
         height: 160px;
     }
@@ -2536,6 +2579,18 @@ footer {
     
     .footer-content {
         grid-template-columns: 1fr;
+    }
+    
+    .enquiry-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .form-section h3 {
+        font-size: 1.2rem;
+    }
+    
+    .success-message {
+        padding: 1.5rem 1rem;
     }
     
 }
