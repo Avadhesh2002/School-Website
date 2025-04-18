@@ -403,5 +403,84 @@
             });
         });
     </script>
+    <!-- Loading Overlay -->
+<div id="loadingOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(255,255,255,0.8); justify-content:center; align-items:center; z-index:9999;">
+    <div style="text-align:center;">
+        <i class="fas fa-spinner fa-spin" style="font-size:2rem; color:#2c3e50;"></i>
+        <p style="margin-top:10px;">Submitting your enquiry...</p>
+    </div>
+</div>
+
+<script>
+document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const requiredFields = this.querySelectorAll('[required]');
+  let isValid = true;
+  
+  requiredFields.forEach(field => {
+    if (!field.value || (field.type === 'checkbox' && !field.checked)) {
+      field.style.borderColor = '#e74c3c';
+      isValid = false;
+    } else {
+      field.style.borderColor = '#ddd';
+    }
+  });
+  
+  if (isValid) {
+    document.getElementById('loadingOverlay').style.display = 'flex';
+    
+    const formData = {
+      formType: 'ENQUIRY',
+      childName: document.getElementById('childName').value,
+      childDob: document.getElementById('childDob').value,
+      childGender: document.getElementById('childGender').value,
+      applyingClass: document.getElementById('applyingClass').value,
+      currentSchool: document.getElementById('currentSchool').value,
+      parentName: document.getElementById('parentName').value,
+      relation: document.getElementById('relation').value,
+      parentEmail: document.getElementById('parentEmail').value,
+      parentMobile: document.getElementById('parentMobile').value,
+      parentOccupation: document.getElementById('parentOccupation').value,
+      address: document.getElementById('address').value,
+      city: document.getElementById('city').value,
+      pincode: document.getElementById('pincode').value,
+      hearAbout: document.getElementById('hearAbout').value,
+      questions: document.getElementById('questions').value,
+      schoolTour: document.getElementById('schoolTour').checked,
+      prospectus: document.getElementById('prospectus').checked
+    };
+    
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbyEehvGbX5wlWymKLixqdUhghOqxGq5JO68LNwj50sCs6Mr2OHx6jSsHJx7v5xKAdAX/exec'; // Replace with actual Apps Script Web App URL
+    
+    fetch(scriptUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('loadingOverlay').style.display = 'none';
+      
+      if (data.status === 'success') {
+        document.getElementById('enquiryForm').style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+        document.getElementById('refNumber').textContent = data.refNumber;
+        document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+      } else {
+        alert('Error submitting form: ' + data.message);
+      }
+    })
+    .catch(error => {
+      document.getElementById('loadingOverlay').style.display = 'none';
+      alert('Error submitting form: ' + error.message);
+    });
+  } else {
+    alert('Please fill all required fields marked with *');
+  }
+});
+</script>
 </body>
 </html>
