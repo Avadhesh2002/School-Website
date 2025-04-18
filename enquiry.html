@@ -13,6 +13,7 @@
 <body>
     <!-- Background Video -->
     <video autoplay loop muted playsinline class="back-vid" poster="assets/video-poster.jpg">
+        <source src="assets/backgroundvideo5.mp4" type="video/mp4">
         <img src="assets/fallback-bg.jpg" alt="School Background">
     </video>
 
@@ -39,6 +40,7 @@
                 </ul>
             </nav>
         </header>
+
         <main>
             <section class="enquiry-container">
                 <div class="enquiry-header">
@@ -49,13 +51,13 @@
                 <div class="enquiry-content">
                     <div class="enquiry-form-container">
                         <form id="enquiryForm" class="enquiry-form">
-                             <div class="form-section">
+                            <!-- Child Info -->
+                            <div class="form-section">
                                 <h3><i class="fas fa-child"></i> Child Information</h3>
                                 <div class="form-group">
                                     <label for="childName">Child's Full Name*</label>
                                     <input type="text" id="childName" required>
                                 </div>
-                                
                                 <div class="form-row">
                                     <div class="form-group">
                                         <label for="childDob">Date of Birth*</label>
@@ -71,7 +73,6 @@
                                         </select>
                                     </div>
                                 </div>
-                                
                                 <div class="form-group">
                                     <label for="applyingClass">Class Applying For*</label>
                                     <select id="applyingClass" required>
@@ -79,7 +80,7 @@
                                         <option value="nursery">Nursery (Age 3+)</option>
                                         <option value="lkg">LKG (Age 4+)</option>
                                         <option value="ukg">UKG (Age 5+)</option>
-                                        <option value="1">Class 1 (Age 6+)
+                                        <option value="1">Class 1 (Age 6+)</option>
                                         <option value="2">Class 2</option>
                                         <option value="3">Class 3</option>
                                         <option value="4">Class 4</option>
@@ -95,23 +96,21 @@
                                         <option value="12-science">Class 12 (Science)</option>
                                         <option value="12-commerce">Class 12 (Commerce)</option>
                                         <option value="12-arts">Class 12 (Arts)</option>
-                                        <!-- More class options -->
                                     </select>
                                 </div>
-                                
                                 <div class="form-group">
                                     <label for="currentSchool">Current School (If applicable)</label>
                                     <input type="text" id="currentSchool">
                                 </div>
                             </div>
-                            
+
+                            <!-- Parent Info -->
                             <div class="form-section">
                                 <h3><i class="fas fa-user-friends"></i> Parent/Guardian Information</h3>
                                 <div class="form-group">
                                     <label for="parentName">Parent/Guardian Name*</label>
                                     <input type="text" id="parentName" required>
                                 </div>
-                                
                                 <div class="form-group">
                                     <label for="relation">Relationship to Child*</label>
                                     <select id="relation" required>
@@ -121,7 +120,6 @@
                                         <option value="guardian">Guardian</option>
                                     </select>
                                 </div>
-                                
                                 <div class="form-row">
                                     <div class="form-group">
                                         <label for="parentEmail">Email*</label>
@@ -132,20 +130,19 @@
                                         <input type="tel" id="parentMobile" required pattern="[0-9]{10}">
                                     </div>
                                 </div>
-                                
                                 <div class="form-group">
                                     <label for="parentOccupation">Occupation</label>
                                     <input type="text" id="parentOccupation">
                                 </div>
                             </div>
-                            
+
+                            <!-- Address -->
                             <div class="form-section">
                                 <h3><i class="fas fa-map-marker-alt"></i> Address Information</h3>
                                 <div class="form-group">
                                     <label for="address">Full Address*</label>
                                     <textarea id="address" rows="3" required></textarea>
                                 </div>
-                                
                                 <div class="form-row">
                                     <div class="form-group">
                                         <label for="city">City*</label>
@@ -157,7 +154,8 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
+                            <!-- Additional Info -->
                             <div class="form-section">
                                 <h3><i class="fas fa-comment-alt"></i> Additional Information</h3>
                                 <div class="form-group">
@@ -171,40 +169,37 @@
                                         <option value="other">Other</option>
                                     </select>
                                 </div>
-                                
                                 <div class="form-group">
                                     <label for="questions">Specific Questions</label>
                                     <textarea id="questions" rows="3" placeholder="Any specific questions or requirements..."></textarea>
                                 </div>
-                                
                                 <div class="form-group checkbox-group">
                                     <input type="checkbox" id="schoolTour">
                                     <label for="schoolTour">I would like to schedule a school tour</label>
                                 </div>
-                                
                                 <div class="form-group checkbox-group">
                                     <input type="checkbox" id="prospectus">
                                     <label for="prospectus">Please send me the school prospectus</label>
                                 </div>
                             </div>
-                            
+
+                            <!-- Submit -->
                             <div class="form-footer">
                                 <div class="checkbox-group declaration">
                                     <input type="checkbox" id="declaration" required>
                                     <label for="declaration">I declare that all information provided is accurate*</label>
                                 </div>
-                                
                                 <button type="submit" class="submit-btn">
                                     <i class="fas fa-paper-plane"></i> Submit Enquiry
                                 </button>
-                                
                                 <div class="form-note">
                                     <p><i class="fas fa-info-circle"></i> Our admission team will contact you within 24 hours. For urgent enquiries, please call <a href="tel:+911234567890">+91 12345 67890</a>.</p>
                                 </div>
                             </div>
                         </form>
-                        
-                        <div id="successMessage" class="success-message">
+
+                        <!-- Success Message -->
+                        <div id="successMessage" class="success-message" style="display: none;">
                             <div class="success-icon">
                                 <i class="fas fa-check-circle"></i>
                             </div>
@@ -217,6 +212,8 @@
                             <a href="index.html" class="back-home-btn">Back to Home</a>
                         </div>
                     </div>
+
+                    <!-- Sidebar Info -->
                     <div class="enquiry-info">
                         <div class="info-card">
                             <h3><i class="fas fa-clock"></i> Admission Office Hours</h3>
@@ -226,27 +223,16 @@
                                 <li><strong>Sunday:</strong> Closed</li>
                             </ul>
                         </div>
-                        
+
                         <div class="info-card">
                             <h3><i class="fas fa-phone-alt"></i> Contact Information</h3>
                             <ul class="contact-details">
-                                <li>
-                                    <i class="fas fa-phone"></i>
-                                    <a href="tel:9118565382">9118565382</a> (Admission Office)
-                                </li>
-                                <li>
-                                    <i class="fas fa-envelope"></i>
-                                    <a href="mailto:admissions@dvconvent.edu">admissions@dvconvent.edu</a>
-                                </li>
-                                <li>
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    D V Convent School<br>
-                                    Akodha,Rohi,<br>
-                                    Bhadohi - 221308
-                                </li>
+                                <li><i class="fas fa-phone"></i> <a href="tel:9118565382">9118565382</a> (Admission Office)</li>
+                                <li><i class="fas fa-envelope"></i> <a href="mailto:admissions@dvconvent.edu">admissions@dvconvent.edu</a></li>
+                                <li><i class="fas fa-map-marker-alt"></i> D V Convent School<br>Akodha, Rohi,<br>Bhadohi - 221308</li>
                             </ul>
                         </div>
-                        
+
                         <div class="info-card">
                             <h3><i class="fas fa-question"></i> Quick Answers</h3>
                             <div class="faq-preview">
@@ -261,26 +247,26 @@
                                 <a href="registration-admission.html" class="view-more">View More FAQs →</a>
                             </div>
                         </div>
-                        
+
                         <div class="info-card map-card">
                             <h3><i class="fas fa-map-marked-alt"></i> School Location</h3>
                             <div class="map-container">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.123456789012!2d77.12345678901234!3d12.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDA3JzI0LjQiTiA3N8KwMDcnMjQuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" 
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.123456789012!2d77.12345678901234!3d12.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDA3JzI0LjQiTiA3N8KwMDcnMjQuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
                                     width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section>
         </main>
+
         <footer>
-           <div class="footer-content">
+            <div class="footer-content">
                 <div class="footer-section about">
                     <h4>About Our School</h4>
                     <p>D V Convent School has been providing quality education since 1995, nurturing young minds for a brighter future.</p>
                 </div>
-                
+
                 <div class="footer-section quick-links">
                     <h4>Quick Links</h4>
                     <ul>
@@ -291,7 +277,7 @@
                         <li><a href="enquiry.html">Contact Us</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section social">
                     <h4>Stay Connected</h4>
                     <div class="social-links">
@@ -299,149 +285,9 @@
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
-                    <div class="subscribe">
-                        <p>Get admission updates:</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Your email" required>
-                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                        </form>
-                    </div>
                 </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2015 D V Convent School. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
             </div>
         </footer>
     </section>
-
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="spinner">
-            <div class="double-bounce1"></div>
-            <div class="double-bounce2"></div>
-        </div>
-    </div>
-
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            const nav = document.getElementById('mainNav');
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            nav.classList.toggle('show');
-        });
-
-        // Form submission to Google Sheets
-        document.getElementById('enquiryForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Validate form
-            const requiredFields = this.querySelectorAll('[required]');
-            let isValid = true;
-            
-            requiredFields.forEach(field => {
-                if (!field.value) {
-                    field.style.borderColor = '#e74c3c';
-                    isValid = false;
-                } else {
-                    field.style.borderColor = '#ddd';
-                }
-            });
-            
-            if (isValid) {
-                // Show loading overlay
-                document.getElementById('loadingOverlay').style.display = 'flex';
-                
-                // Prepare form data
-                const formData = {
-                    formType: 'ENQUIRY',
-                    childName: document.getElementById('childName').value,
-                    childDob: document.getElementById('childDob').value,
-                    childGender: document.getElementById('childGender').value,
-                    applyingClass: document.getElementById('applyingClass').value,
-                    currentSchool: document.getElementById('currentSchool').value,
-                    parentName: document.getElementById('parentName').value,
-                    relation: document.getElementById('relation').value,
-                    parentEmail: document.getElementById('parentEmail').value,
-                    parentMobile: document.getElementById('parentMobile').value,
-                    parentOccupation: document.getElementById('parentOccupation').value,
-                    address: document.getElementById('address').value,
-                    city: document.getElementById('city').value,
-                    pincode: document.getElementById('pincode').value,
-                    hearAbout: document.getElementById('hearAbout').value,
-                    questions: document.getElementById('questions').value,
-                    schoolTour: document.getElementById('schoolTour').checked,
-                    prospectus: document.getElementById('prospectus').checked
-                };
-                
-                // Replace with your actual web app URL from Google Apps Script deployment
-                const scriptUrl = 'https://script.google.com/macros/s/AKfycbyEehvGbX5wlWymKLixqdUhghOqxGq5JO68LNwj50sCs6Mr2OHx6jSsHJx7v5xKAdAX/exec';
-                
-                // Send data to Google Apps Script
-                fetch(scriptUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('loadingOverlay').style.display = 'none';
-                    
-                    if (data.status === 'success') {
-                        // Hide form and show success message
-                        this.style.display = 'none';
-                        document.getElementById('successMessage').style.display = 'block';
-                        
-                        // Set reference number
-                        document.getElementById('refNumber').textContent = data.refNumber;
-                        
-                        // Scroll to success message
-                        document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
-                    } else {
-                        alert('Error submitting form: ' + data.message);
-                    }
-                })
-                .catch(error => {
-                    document.getElementById('loadingOverlay').style.display = 'none';
-                    alert('Error submitting form: ' + error.message);
-                });
-            } else {
-                alert('Please fill all required fields marked with *');
-            }
-        });
-
-        // Date of birth validation
-        document.getElementById('childDob').addEventListener('change', function() {
-            const dob = new Date(this.value);
-            const today = new Date();
-            const age = today.getFullYear() - dob.getFullYear();
-            
-            if (age < 3) {
-                alert('Child must be at least 3 years old for admission');
-                this.value = '';
-            }
-        });
-
-        // Loading overlay
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('loadingOverlay').style.opacity = '0';
-                setTimeout(function() {
-                    document.getElementById('loadingOverlay').style.display = 'none';
-                }, 300);
-            }, 500);
-        });
-
-        // Input validation styling
-        document.querySelectorAll('input, select, textarea').forEach(input => {
-            input.addEventListener('input', function() {
-                if (this.checkValidity()) {
-                    this.style.borderColor = '#ddd';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
