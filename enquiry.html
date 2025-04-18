@@ -49,7 +49,7 @@
                 <div class="enquiry-content">
                     <div class="enquiry-form-container">
                         <form id="enquiryForm" class="enquiry-form">
-                            <div class="form-section">
+                             <div class="form-section">
                                 <h3><i class="fas fa-child"></i> Child Information</h3>
                                 <div class="form-group">
                                     <label for="childName">Child's Full Name*</label>
@@ -217,7 +217,6 @@
                             <a href="index.html" class="back-home-btn">Back to Home</a>
                         </div>
                     </div>
-                    
                     <div class="enquiry-info">
                         <div class="info-card">
                             <h3><i class="fas fa-clock"></i> Admission Office Hours</h3>
@@ -271,11 +270,12 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
         </main>
         <footer>
-            <div class="footer-content">
+           <div class="footer-content">
                 <div class="footer-section about">
                     <h4>About Our School</h4>
                     <p>D V Convent School has been providing quality education since 1995, nurturing young minds for a brighter future.</p>
@@ -331,7 +331,7 @@
             nav.classList.toggle('show');
         });
 
-        // Form submission
+        // Form submission to Google Sheets
         document.getElementById('enquiryForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -352,21 +352,61 @@
                 // Show loading overlay
                 document.getElementById('loadingOverlay').style.display = 'flex';
                 
-                // Simulate form submission
-                setTimeout(() => {
+                // Prepare form data
+                const formData = {
+                    formType: 'ENQUIRY',
+                    childName: document.getElementById('childName').value,
+                    childDob: document.getElementById('childDob').value,
+                    childGender: document.getElementById('childGender').value,
+                    applyingClass: document.getElementById('applyingClass').value,
+                    currentSchool: document.getElementById('currentSchool').value,
+                    parentName: document.getElementById('parentName').value,
+                    relation: document.getElementById('relation').value,
+                    parentEmail: document.getElementById('parentEmail').value,
+                    parentMobile: document.getElementById('parentMobile').value,
+                    parentOccupation: document.getElementById('parentOccupation').value,
+                    address: document.getElementById('address').value,
+                    city: document.getElementById('city').value,
+                    pincode: document.getElementById('pincode').value,
+                    hearAbout: document.getElementById('hearAbout').value,
+                    questions: document.getElementById('questions').value,
+                    schoolTour: document.getElementById('schoolTour').checked,
+                    prospectus: document.getElementById('prospectus').checked
+                };
+                
+                // Replace with your actual web app URL from Google Apps Script deployment
+                const scriptUrl = 'https://script.google.com/macros/s/AKfycbyEehvGbX5wlWymKLixqdUhghOqxGq5JO68LNwj50sCs6Mr2OHx6jSsHJx7v5xKAdAX/exec';
+                
+                // Send data to Google Apps Script
+                fetch(scriptUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                })
+                .then(response => response.json())
+                .then(data => {
                     document.getElementById('loadingOverlay').style.display = 'none';
                     
-                    // Hide form and show success message
-                    this.style.display = 'none';
-                    document.getElementById('successMessage').style.display = 'block';
-                    
-                    // Generate random reference number
-                    const refNumber = 'ENQ-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
-                    document.getElementById('refNumber').textContent = refNumber;
-                    
-                    // Scroll to success message
-                    document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
-                }, 1500);
+                    if (data.status === 'success') {
+                        // Hide form and show success message
+                        this.style.display = 'none';
+                        document.getElementById('successMessage').style.display = 'block';
+                        
+                        // Set reference number
+                        document.getElementById('refNumber').textContent = data.refNumber;
+                        
+                        // Scroll to success message
+                        document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        alert('Error submitting form: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                    alert('Error submitting form: ' + error.message);
+                });
             } else {
                 alert('Please fill all required fields marked with *');
             }
@@ -403,84 +443,5 @@
             });
         });
     </script>
-    <!-- Loading Overlay -->
-<div id="loadingOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(255,255,255,0.8); justify-content:center; align-items:center; z-index:9999;">
-    <div style="text-align:center;">
-        <i class="fas fa-spinner fa-spin" style="font-size:2rem; color:#2c3e50;"></i>
-        <p style="margin-top:10px;">Submitting your enquiry...</p>
-    </div>
-</div>
-
-<script>
-document.getElementById('enquiryForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const requiredFields = this.querySelectorAll('[required]');
-  let isValid = true;
-  
-  requiredFields.forEach(field => {
-    if (!field.value || (field.type === 'checkbox' && !field.checked)) {
-      field.style.borderColor = '#e74c3c';
-      isValid = false;
-    } else {
-      field.style.borderColor = '#ddd';
-    }
-  });
-  
-  if (isValid) {
-    document.getElementById('loadingOverlay').style.display = 'flex';
-    
-    const formData = {
-      formType: 'ENQUIRY',
-      childName: document.getElementById('childName').value,
-      childDob: document.getElementById('childDob').value,
-      childGender: document.getElementById('childGender').value,
-      applyingClass: document.getElementById('applyingClass').value,
-      currentSchool: document.getElementById('currentSchool').value,
-      parentName: document.getElementById('parentName').value,
-      relation: document.getElementById('relation').value,
-      parentEmail: document.getElementById('parentEmail').value,
-      parentMobile: document.getElementById('parentMobile').value,
-      parentOccupation: document.getElementById('parentOccupation').value,
-      address: document.getElementById('address').value,
-      city: document.getElementById('city').value,
-      pincode: document.getElementById('pincode').value,
-      hearAbout: document.getElementById('hearAbout').value,
-      questions: document.getElementById('questions').value,
-      schoolTour: document.getElementById('schoolTour').checked,
-      prospectus: document.getElementById('prospectus').checked
-    };
-    
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbyEehvGbX5wlWymKLixqdUhghOqxGq5JO68LNwj50sCs6Mr2OHx6jSsHJx7v5xKAdAX/exec'; // Replace with actual Apps Script Web App URL
-    
-    fetch(scriptUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('loadingOverlay').style.display = 'none';
-      
-      if (data.status === 'success') {
-        document.getElementById('enquiryForm').style.display = 'none';
-        document.getElementById('successMessage').style.display = 'block';
-        document.getElementById('refNumber').textContent = data.refNumber;
-        document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
-      } else {
-        alert('Error submitting form: ' + data.message);
-      }
-    })
-    .catch(error => {
-      document.getElementById('loadingOverlay').style.display = 'none';
-      alert('Error submitting form: ' + error.message);
-    });
-  } else {
-    alert('Please fill all required fields marked with *');
-  }
-});
-</script>
 </body>
 </html>
