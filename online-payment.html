@@ -76,31 +76,7 @@
             </div>
           </div>
 
-          <div class="upi-payment-section">
-            <h3>Scan & Pay</h3>
-            <div class="qr-code">
-              <img src="assets/upi-qr.png" alt="UPI QR Code" />
-              <p>Scan to pay ₹<span id="displayAmount">0</span></p>
-            </div>
-            <p>OR send to UPI ID: <strong>dvconventschool@examplebank</strong></p>
-            <button class="copy-btn" type="button" onclick="copyUpiId()"><i class="far fa-copy"></i> Copy UPI ID</button>
-          </div>
-
-          <div class="form-group">
-            <label for="utrNumber">Transaction ID/UTR Number*</label>
-            <input type="text" id="utrNumber" name="utrNumber" required placeholder="From payment receipt" />
-          </div>
-
-          <div class="form-group">
-            <label for="paymentDate">Payment Date*</label>
-            <input type="date" id="paymentDate" name="paymentDate" required />
-          </div>
-
-          <div class="form-group checkbox-group">
-            <input type="checkbox" id="receiptCheck" required />
-            <label for="receiptCheck">I have saved the payment receipt</label>
-          </div>
-
+          
           <button id="rzp-button" class="submit-btn" type="submit">
             <i class="fas fa-paper-plane"></i> Pay ₹<span id="amountDisplay">0</span> Now
           </button>
